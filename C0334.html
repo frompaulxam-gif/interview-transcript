@@ -25,6 +25,17 @@
   .controls button:hover { background:var(--hi); }
   .controls .on { background:var(--accent); color:#0b0e14; border-color:var(--accent); }
   .hint { color:var(--mut); font-size:12.5px; }
+  /* Quality segmented switch: two clearly-distinct options */
+  .qual { display:inline-flex; align-items:stretch; border:1px solid #2c4a7a; border-radius:9px;
+          overflow:hidden; background:#0d1626; }
+  .qual .lbl { display:flex; align-items:center; padding:0 9px; font-size:11px; color:var(--mut);
+        text-transform:uppercase; letter-spacing:.04em; border-right:1px solid #22304a; }
+  .qual button { background:transparent; color:var(--mut); border:none; border-radius:0;
+        padding:7px 14px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .qual button:hover { background:#16243d; color:var(--txt); }
+  .qual button.sel { background:var(--accent); color:#06101f; }
+  .qual button.sel .tag { opacity:.8; font-weight:600; }
+  .qual .tag { font-size:10px; }
   .transcript { background:var(--panel); border-radius:12px; overflow:hidden; }
   .line { display:flex; gap:12px; padding:10px 14px; border-top:1px solid var(--line);
           scroll-margin-top:62vh; }
@@ -75,7 +86,11 @@
     <video id="v" controls preload="metadata" playsinline src="C0334.mp4"></video>
     <div class="controls">
       <button id="follow" class="on" onclick="toggleFollow()">Auto-scroll: on</button>
-      <button id="qBtn" onclick="toggleQuality()" style="">Quality: HD</button>
+      <span class="qual" style="">
+        <span class="lbl">Quality</span>
+        <button id="qHD" class="sel" onclick="setQuality(false)">HD <span class="tag">720p</span></button>
+        <button id="q4K" onclick="setQuality(true)">4K <span class="tag">2160p</span></button>
+      </span>
       <button onclick="openFull()">📄 Full transcript</button>
       <span class="hint">Click a <strong>blue time pill</strong> to jump there. Select the text to copy it — the times won’t be included.</span>
     </div>
@@ -108,19 +123,19 @@
   const PLAIN = "Interviewer: A follow-up question for you, Jonathan. So \u2014 you're a teacher and you've seen guidance, or you're a school leader and you know you're supposed to be doing evidence-informed practice. Where do you start?\n\nJonathan: Yeah. So these behaviours are really useful \u2014 they get to the heart of what underpins implementation. But I guess the question is: where do you enact that? How do you go about putting it into practice? The part of this work I've not touched on so much is the process \u2014 an implementation process that we suggest, which we break down into four phases: explore, prepare, deliver, sustain. It essentially sets out a set of practical activities you can conduct across that cycle.\n\nJonathan: So in the explore phase, it's about understanding the needs and context. It'll involve looking at research; it'll involve thinking about fit and feasibility. The prepare phase is around planning and designing implementation \u2014 again, starting to really unite understanding about the change. It might be where you do initial professional development and training to build knowledge around the approach. It's where you build the systems and structures, the funding, the resources, the time, the infrastructure that's needed. Nothing's happened yet \u2014 interestingly, this is all before delivery happens.\n\nJonathan: And then when you start to deliver the change, it's about supporting people in those initial turbulent stages of change, and \u2014 going back to that reflect behaviour \u2014 thinking about how they monitor, adapt and improve over time. And then sustain is about how to embed the approach and review: you look at the whole effort and think, \"How's that gone? Has the change achieved what you wanted? Where do you go next? Do you scale it? Do you stop it?\"\n\nJonathan: So when we originally started on this guidance, we just used to talk about that process. But to a degree, you can go through those steps \u2014 yet if people aren't involved in the right way, and you haven't got the right infrastructure in place, then you won't do it well. The process enables you to do implementation; these behaviours we've been talking about enable you to do it well, I would say.\n\nInterviewer: Thanks.";
   const SRC_HD = "C0334.mp4";
   const SRC_4K = "https://github.com/frompaulxam-gif/interview-transcript/releases/download/v4k/C0334.4k.mp4";
-  let is4k = false;
-  function toggleQuality() {
-    const t = v.currentTime, playing = !v.paused;
-    is4k = !is4k;
-    v.src = is4k ? SRC_4K : SRC_HD;
-    v.addEventListener('loadedmetadata', () => { v.currentTime = t; if (playing) v.play(); }, {once:true});
-    const b = document.getElementById('qBtn');
-    b.textContent = 'Quality: ' + (is4k ? '4K' : 'HD');
-    b.classList.toggle('on', is4k);
-  }
   const v = document.getElementById('v');
   const lines = Array.from(document.querySelectorAll('.line'));
-  let follow = true, active = -1;
+  let follow = true, active = -1, is4k = false;
+
+  function setQuality(want4k) {
+    if (want4k === is4k) return;
+    const t = v.currentTime, playing = !v.paused;
+    is4k = want4k;
+    v.src = is4k ? SRC_4K : SRC_HD;
+    v.addEventListener('loadedmetadata', () => { v.currentTime = t; if (playing) v.play(); }, {once:true});
+    document.getElementById('q4K').classList.toggle('sel', is4k);
+    document.getElementById('qHD').classList.toggle('sel', !is4k);
+  }
 
   function seek(t) { v.currentTime = t + 0.001; v.play(); }
   function toggleFollow() {
