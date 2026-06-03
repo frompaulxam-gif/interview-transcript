@@ -75,6 +75,7 @@
     <video id="v" controls preload="metadata" playsinline src="C0334.mp4"></video>
     <div class="controls">
       <button id="follow" class="on" onclick="toggleFollow()">Auto-scroll: on</button>
+      <button id="qBtn" onclick="toggleQuality()" style="">Quality: HD</button>
       <button onclick="openFull()">📄 Full transcript</button>
       <span class="hint">Click a <strong>blue time pill</strong> to jump there. Select the text to copy it — the times won’t be included.</span>
     </div>
@@ -105,6 +106,18 @@
 <script>
   const STARTS = [0.0, 12.7, 46.0, 84.0, 121.0, 144.0];
   const PLAIN = "Interviewer: A follow-up question for you, Jonathan. So \u2014 you're a teacher and you've seen guidance, or you're a school leader and you know you're supposed to be doing evidence-informed practice. Where do you start?\n\nJonathan: Yeah. So these behaviours are really useful \u2014 they get to the heart of what underpins implementation. But I guess the question is: where do you enact that? How do you go about putting it into practice? The part of this work I've not touched on so much is the process \u2014 an implementation process that we suggest, which we break down into four phases: explore, prepare, deliver, sustain. It essentially sets out a set of practical activities you can conduct across that cycle.\n\nJonathan: So in the explore phase, it's about understanding the needs and context. It'll involve looking at research; it'll involve thinking about fit and feasibility. The prepare phase is around planning and designing implementation \u2014 again, starting to really unite understanding about the change. It might be where you do initial professional development and training to build knowledge around the approach. It's where you build the systems and structures, the funding, the resources, the time, the infrastructure that's needed. Nothing's happened yet \u2014 interestingly, this is all before delivery happens.\n\nJonathan: And then when you start to deliver the change, it's about supporting people in those initial turbulent stages of change, and \u2014 going back to that reflect behaviour \u2014 thinking about how they monitor, adapt and improve over time. And then sustain is about how to embed the approach and review: you look at the whole effort and think, \"How's that gone? Has the change achieved what you wanted? Where do you go next? Do you scale it? Do you stop it?\"\n\nJonathan: So when we originally started on this guidance, we just used to talk about that process. But to a degree, you can go through those steps \u2014 yet if people aren't involved in the right way, and you haven't got the right infrastructure in place, then you won't do it well. The process enables you to do implementation; these behaviours we've been talking about enable you to do it well, I would say.\n\nInterviewer: Thanks.";
+  const SRC_HD = "C0334.mp4";
+  const SRC_4K = "https://github.com/frompaulxam-gif/interview-transcript/releases/download/v4k/C0334.4k.mp4";
+  let is4k = false;
+  function toggleQuality() {
+    const t = v.currentTime, playing = !v.paused;
+    is4k = !is4k;
+    v.src = is4k ? SRC_4K : SRC_HD;
+    v.addEventListener('loadedmetadata', () => { v.currentTime = t; if (playing) v.play(); }, {once:true});
+    const b = document.getElementById('qBtn');
+    b.textContent = 'Quality: ' + (is4k ? '4K' : 'HD');
+    b.classList.toggle('on', is4k);
+  }
   const v = document.getElementById('v');
   const lines = Array.from(document.querySelectorAll('.line'));
   let follow = true, active = -1;
