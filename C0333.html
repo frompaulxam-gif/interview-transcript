@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interview — Prof. Jonathan Sharples (Part 1)</title>
+<style>
+  :root { --bg:#0f1117; --panel:#171a23; --line:#1f2330; --hi:#2a3350;
+           --txt:#e7e9ee; --mut:#9aa3b2; --accent:#6ea8fe; --q:#7ee0c0; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  header { padding:18px 22px 10px; }
+  h1 { font-size:20px; margin:0 0 2px; }
+  .sub { color:var(--mut); font-size:13px; }
+  .wrap { display:flex; flex-direction:column; gap:0; max-width:980px; margin:0 auto;
+          padding:0 16px 60px; }
+  .videobox { position:sticky; top:0; z-index:5; background:var(--bg); padding:8px 0 12px; }
+  video { width:100%; border-radius:12px; background:#000; max-height:60vh; }
+  .hint { color:var(--mut); font-size:12.5px; margin:8px 2px 4px; }
+  .transcript { background:var(--panel); border-radius:12px; overflow:hidden; }
+  .line { display:flex; gap:12px; padding:9px 14px; border-top:1px solid var(--line);
+          cursor:pointer; scroll-margin-top:64vh; }
+  .line:first-child { border-top:none; }
+  .line:hover { background:var(--line); }
+  .line.active { background:var(--hi); }
+  .ts { flex:0 0 56px; font-variant-numeric:tabular-nums; font-size:13px;
+        color:var(--accent); background:none; border:none; cursor:pointer;
+        padding:2px 0; text-align:left; font-family:inherit; }
+  .line.active .ts { font-weight:700; }
+  .body { flex:1; }
+  .spk { font-weight:700; font-size:12.5px; letter-spacing:.02em;
+         text-transform:uppercase; margin-right:6px; }
+  .spk-interviewer { color:var(--accent); }
+  .spk-jonathan { color:var(--q); }
+  .txt { color:var(--txt); }
+  .controls { display:flex; gap:8px; align-items:center; margin:6px 2px; flex-wrap:wrap; }
+  .controls button { background:var(--line); color:var(--txt); border:1px solid #2b3040;
+        border-radius:8px; padding:6px 12px; font-size:13px; cursor:pointer; }
+  .controls button:hover { background:var(--hi); }
+  .controls .on { background:var(--accent); color:#0b0e14; border-color:var(--accent); }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Interview — Prof. Jonathan Sharples (Part 1)</h1>
+  <div class="sub">Evidence-informed implementation in schools · click any timestamp to jump</div>
+</header>
+<div class="wrap">
+  <div class="videobox">
+    <video id="v" controls preload="metadata" playsinline src="C0333.mp4"></video>
+    <div class="controls">
+      <button id="follow" class="on" onclick="toggleFollow()">Auto-scroll: on</button>
+      <span class="hint">Tip: click any timestamp to jump the video there.</span>
+    </div>
+  </div>
+  <div class="transcript" id="t">
+<div class="line" data-start="0.00" data-i="0"><button class="ts" onclick="seek(0.00)">0:00</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">Hi, welcome. We&#x27;re here today interviewing some of our researchers at Manchester Met, and today we have Jonathan. Jonathan, do you want to tell us a little bit about yourself and what motivated you to get into the research work you do?</span></div></div>
+<div class="line" data-start="9.00" data-i="1"><button class="ts" onclick="seek(9.00)">0:09</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Sure, yeah. So, hi — I&#x27;m Jonathan Sharples. I&#x27;m a Professor of Evidence-Informed Leadership, and I kind of sit in the murky spaces between research, policy and practice. I&#x27;m interested in how evidence and research inform education policy and practice, which essentially involves developing and researching initiatives that support the use of research evidence.</span></div></div>
+<div class="line" data-start="42.00" data-i="2"><button class="ts" onclick="seek(42.00)">0:42</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">Excellent. And what motivated you to get into this kind of work?</span></div></div>
+<div class="line" data-start="43.00" data-i="3"><button class="ts" onclick="seek(43.00)">0:43</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Well, there&#x27;s a lot of really important and useful research around what can support teaching and learning, but it means nothing if it&#x27;s not used and available. So I&#x27;m just really interested in the processes by which we make sense of evidence and apply it in a way that&#x27;s right for the context it&#x27;s being used in. Recently that&#x27;s really focused on the process of implementation.</span></div></div>
+<div class="line" data-start="74.00" data-i="4"><button class="ts" onclick="seek(74.00)">1:14</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">There&#x27;s been this real culture shift in English education towards an engagement with evidence, which is really striking. But one of the things we&#x27;ve learned is that an awareness of evidence is necessary but not sufficient. The challenge is often for schools in how they interpret, translate and implement that in a way that&#x27;s right for their context — and that&#x27;s often the limiting factor. When schools engage with resources from organisations like the EEF, they&#x27;ll read a guidance report, but that guidance and evidence will play out differently in different contexts. So I&#x27;ve got really interested in understanding the process by which people make sense of evidence and then interpret it in a way that&#x27;s right for their setting.</span></div></div>
+<div class="line" data-start="119.00" data-i="5"><button class="ts" onclick="seek(119.00)">1:59</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">Yeah, I can understand. As you say, teachers and school leaders are so busy, and then we have this pressure to do evidence-informed work but we&#x27;re not always sure how that works or how to make it happen effectively. Are there a couple of key findings from your research that you could share?</span></div></div>
+<div class="line" data-start="140.00" data-i="6"><button class="ts" onclick="seek(140.00)">2:20</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Yeah. So a few years ago I oversaw a team of researchers — but also expert practitioners — to do a really extensive review of evidence about what drives implementation of evidence-informed practices in schools. And it&#x27;s complex; there isn&#x27;t a single dimension to it. There are lots of factors that influence that process.</span></div></div>
+<div class="line" data-start="167.00" data-i="7"><button class="ts" onclick="seek(167.00)">2:47</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">You can think about it in terms of the structural factors — having the processes in place, having an infrastructure, having systems and structures that can support evidence-informed school improvement. But the most striking thing that comes out of our work is that ultimately implementation is about people. It&#x27;s essentially a collaborative and social process that&#x27;s driven by how people think, behave and interact. That emphasis — really thinking about the interactions between different people within a school as part of implementing a change — is perhaps the most striking thing that came out of it.</span></div></div>
+<div class="line" data-start="214.00" data-i="8"><button class="ts" onclick="seek(214.00)">3:34</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">We identified three cross-cutting behaviours that are really key in driving effective implementation in schools, which we refer to as engage, unite and reflect. Engage relates to how people are involved in implementation — creating meaningful opportunities to share their ideas, perspectives, even concerns around a change. It relates to setting up collaborative processes so people can work together to solve problems, share insights and support change — things like professional learning communities are a good example. But engage also relates to the more directive aspects of leaders: making decisions, communicating the direction of travel, corralling efforts, preventing implementation being dragged off track.</span></div></div>
+<div class="line" data-start="270.00" data-i="9"><button class="ts" onclick="seek(270.00)">4:30</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Unite relates to how we align our understanding around what&#x27;s being implemented, how it will be implemented, and why it matters. There&#x27;s a lot in there — from uniting the values and rationale that underpin an approach, right through to uniting the practices and techniques we use in classrooms.</span></div></div>
+<div class="line" data-start="291.00" data-i="10"><button class="ts" onclick="seek(291.00)">4:51</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">And reflect relates to the process by which we monitor implementation and use those insights to make improvements over time. So you might be reflecting on pupils&#x27; needs, current practices, and implementation as it progresses — but crucially using those insights to keep informing and driving ongoing improvements.</span></div></div>
+<div class="line" data-start="315.00" data-i="11"><button class="ts" onclick="seek(315.00)">5:15</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">So you don&#x27;t just launch an initiative — it&#x27;s an active process.</span></div></div>
+<div class="line" data-start="319.00" data-i="12"><button class="ts" onclick="seek(319.00)">5:19</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">It&#x27;s an active process of learning and improvement. If you think about almost everything we learn as an adult, we expect to be pretty bad at it initially — like learning to drive, or learning an instrument or a hobby — but through processes of learning and improvement we get better over time. That reflect behaviour is really getting at the heart of that process of ongoing learning and improvement.</span></div></div>
+<div class="line" data-start="340.00" data-i="13"><button class="ts" onclick="seek(340.00)">5:40</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">I&#x27;m going to throw in a question I hadn&#x27;t expected, so here we go. In all of that, what do you see as the role of evidence? Because what I hear you saying is that the processes are so important. So within those three behaviours, where does evidence sit?</span></div></div>
+<div class="line" data-start="361.00" data-i="14"><button class="ts" onclick="seek(361.00)">6:01</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Yeah, well — I think evidence can relate to quite a lot of different things in this kind of context.</span></div></div>
+<div class="line" data-start="369.00" data-i="15"><button class="ts" onclick="seek(369.00)">6:09</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">Right.</span></div></div>
+<div class="line" data-start="369.50" data-i="16"><button class="ts" onclick="seek(369.50)">6:09</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">So when you&#x27;re implementing evidence-informed approaches in schools, you&#x27;re integrating lots of different forms of evidence and data in making that decision. We talk about various phases of implementation — and the first phase we call an explore phase, which is really the decision-making bit of it. When you&#x27;re trying to decide what to implement, you need to think about, on one hand, pupil needs — so you&#x27;re gathering data about pupils and trying to understand their context. That might be attainment data, but it might involve speaking to pupils, trying to understand the perspectives they&#x27;re coming from.</span></div></div>
+<div class="line" data-start="407.00" data-i="17"><button class="ts" onclick="seek(407.00)">6:47</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">You&#x27;ll be gathering data around current practices, so that might involve reviewing what&#x27;s currently going on in the school, trying to speak to teachers, trying to observe what&#x27;s happening. So that&#x27;s trying to understand the needs and context, which requires evidence and data of one type. But it also involves looking outside and going, &quot;Okay, we&#x27;ve got this challenge — what does research tell us that&#x27;s relevant?&quot; So that will involve looking at external evidence, looking at research, looking at what&#x27;s worked. But ultimately &quot;what works&quot; is inherently retrospective. What&#x27;s going to work in that context requires thinking about how that evidence relates to the needs and setting. So it comes back to the people.</span></div></div>
+<div class="line" data-start="465.00" data-i="18"><button class="ts" onclick="seek(465.00)">7:45</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">It has to do with the type of evidence you have, but also what you do with it.</span></div></div>
+<div class="line" data-start="468.00" data-i="19"><button class="ts" onclick="seek(468.00)">7:48</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Absolutely.</span></div></div>
+<div class="line" data-start="469.00" data-i="20"><button class="ts" onclick="seek(469.00)">7:49</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">And how you work with the people while you do that.</span></div></div>
+<div class="line" data-start="472.00" data-i="21"><button class="ts" onclick="seek(472.00)">7:52</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Yeah. So evidence in this respect — yes, it relates to research evidence, but essentially, when you&#x27;re making and acting on these decisions, you&#x27;re gathering evidence on how implementation is going, and how effective that approach is. So for me there isn&#x27;t really this hierarchy of evidence. Good evidence-informed decision-making involves drawing on lots of different insights and kinds of evidence and integrating those together.</span></div></div>
+<div class="line" data-start="501.00" data-i="22"><button class="ts" onclick="seek(501.00)">8:21</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">There&#x27;s a question I like to ask people — the next one — which is: has anything surprised you in doing this kind of research?</span></div></div>
+<div class="line" data-start="511.00" data-i="23"><button class="ts" onclick="seek(511.00)">8:31</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">So one of the things that&#x27;s come across through organisations like the EEF&#x27;s work is that how things are done is really important — implementation matters. But at the same time, what&#x27;s implemented is also really important. To give an extreme example: there are a small number of projects the EEF evaluated where they suggest they&#x27;ve had a negative impact on pupil outcomes. Not many, but a few. And in those cases, better implementation is associated with even worse outcomes. So if you do a good job of implementing something that has a negative impact, it has more of a negative impact.</span></div></div>
+<div class="line" data-start="549.00" data-i="24"><button class="ts" onclick="seek(549.00)">9:09</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">The lesson to take away is that we need to think about both doing the right thing and implementing it well — both things together. So our work particularly doesn&#x27;t decouple the decision-making process about what to implement from the process of putting it into action.</span></div></div>
+<div class="line" data-start="579.00" data-i="25"><button class="ts" onclick="seek(579.00)">9:39</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">So I guess it also highlights again the reflect component.</span></div></div>
+<div class="line" data-start="582.00" data-i="26"><button class="ts" onclick="seek(582.00)">9:42</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Yeah. Ultimately, a trial can tell you something about what&#x27;s worked across a large number of schools, but it&#x27;s only going to be your school that&#x27;s able to reflect on it: How is it going for you? Is it meeting your pupils&#x27; needs? Is it having the changes you intend? Research can be a useful guide and steer around where you put your precious effort — but ultimately this is inherently contextual. It has to be understood in the context in which it&#x27;s going to be used.</span></div></div>
+<div class="line" data-start="615.00" data-i="27"><button class="ts" onclick="seek(615.00)">10:15</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">Well, speaking of which, we have an opportunity on the Thinkific platform to speak to all of the educators involved in hosting our students. So, anything you&#x27;d like to tell them that might be useful in their day-to-day work?</span></div></div>
+<div class="line" data-start="631.00" data-i="28"><button class="ts" onclick="seek(631.00)">10:31</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Yeah. I think it comes back to — implementation, for me, is about the aggregation of lots of small things done well. There isn&#x27;t a single act that&#x27;s going to crack it. You can have the processes in place, you can have the structures, but it really comes down to how people are involved in implementation and feel that they can drive and shape it. And that includes frontline teachers — we can&#x27;t understand how something is being implemented without gathering the insights of the people actually doing the work on the ground.</span></div></div>
+<div class="line" data-start="669.00" data-i="29"><button class="ts" onclick="seek(669.00)">11:09</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">So I sometimes refer to a kind of jazz band analogy, where you&#x27;ve got people playing coordinated but differentiated roles in achieving something that collectively is greater than the sum of the individual parts.</span></div></div>
+<div class="line" data-start="682.00" data-i="30"><button class="ts" onclick="seek(682.00)">11:22</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">And so, some space for improvisation. That&#x27;s why it&#x27;s jazz.</span></div></div>
+<div class="line" data-start="684.00" data-i="31"><button class="ts" onclick="seek(684.00)">11:24</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">Yeah. The reason it&#x27;s jazz is there isn&#x27;t a piece of sheet music that we&#x27;re all standing at the front and playing. But at the same time, it&#x27;s not just random noise. For me, when school improvement efforts really start to fly, you&#x27;ve got people who feel really confident in their coordinated roles: leaders making decisions and setting the direction of travel; middle leaders and implementation teams supporting the changes; practitioners feeling confident to experiment, try things and feed back their insights; pupils giving really valuable — and often overlooked — insights on how these changes are going; governors creating the context, trust leaders, and so on.</span></div></div>
+<div class="line" data-start="741.00" data-i="32"><button class="ts" onclick="seek(741.00)">12:21</button><div class="body"><span class="spk spk-jonathan">Jonathan</span> <span class="txt">So that&#x27;s my take-home message: think about how we get those jazz bands working around a change, with people feeling really confident in what they&#x27;re bringing to that endeavour.</span></div></div>
+<div class="line" data-start="753.00" data-i="33"><button class="ts" onclick="seek(753.00)">12:33</button><div class="body"><span class="spk spk-interviewer">Interviewer</span> <span class="txt">Thanks. That&#x27;s good.</span></div></div>
+  </div>
+</div>
+<script>
+  const STARTS = [0.0, 9.0, 42.0, 43.0, 74.0, 119.0, 140.0, 167.0, 214.0, 270.0, 291.0, 315.0, 319.0, 340.0, 361.0, 369.0, 369.5, 407.0, 465.0, 468.0, 469.0, 472.0, 501.0, 511.0, 549.0, 579.0, 582.0, 615.0, 631.0, 669.0, 682.0, 684.0, 741.0, 753.0];
+  const v = document.getElementById('v');
+  const lines = Array.from(document.querySelectorAll('.line'));
+  let follow = true, active = -1;
+
+  function seek(t) { v.currentTime = t + 0.001; v.play(); }
+  function toggleFollow() {
+    follow = !follow;
+    const b = document.getElementById('follow');
+    b.textContent = 'Auto-scroll: ' + (follow ? 'on' : 'off');
+    b.classList.toggle('on', follow);
+  }
+  // find current segment by time (binary search)
+  function idxFor(t) {
+    let lo = 0, hi = STARTS.length - 1, ans = 0;
+    while (lo <= hi) { const m = (lo+hi)>>1;
+      if (STARTS[m] <= t) { ans = m; lo = m+1; } else { hi = m-1; } }
+    return ans;
+  }
+  v.addEventListener('timeupdate', () => {
+    const i = idxFor(v.currentTime);
+    if (i !== active) {
+      if (active >= 0) lines[active].classList.remove('active');
+      lines[i].classList.add('active');
+      active = i;
+      if (follow) lines[i].scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  });
+  lines.forEach(l => l.addEventListener('click', e => {
+    if (e.target.classList.contains('ts')) return;
+    seek(parseFloat(l.dataset.start));
+  }));
+</script>
+</body>
+</html>
